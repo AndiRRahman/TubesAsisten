@@ -84,6 +84,25 @@
                 }
                 ?>
                 <?php
+                if (isset($_SESSION['login'])) {
+                    echo '<li class="riwayat menu-item-riwayat">
+                        <div class="btn-group dropright">
+                            <button type="button" class="btn dropdown-toggle btn-riwayat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-solid fa-clock-rotate-left"></i> Riwayat
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item riwayat-dropdown-item first" onclick="location.href=\'' . BASEURL . 'peminjaman\'" type="button">
+                                    <i class="fa-solid fa-receipt"></i> Peminjaman
+                                </button>
+                                <button class="dropdown-item riwayat-dropdown-item last" onclick="location.href=\'' . BASEURL . 'pengembalian\'" type="button">
+                                    <i class="fa-solid fa-rotate-left"></i> Pengembalian
+                                </button>
+                            </div>
+                        </div>
+                    </li>';
+                }
+                ?>
+                <?php
                 if (isset($_SESSION['login']) && in_array($_SESSION['id_role'], ['1', '2', '3', '4'])) {
                     echo '<li class="kelola-akun">
                         <button onclick="location.href=\'' . BASEURL . 'KelolaAkun\'">
@@ -109,6 +128,7 @@
                     </li>';
                 }
                 ?>
+                
                 <li class="keluar menu-item-logout">
                     <div class="btn-group dropright">
                         <button type="button" class="btn dropdown-toggle btn-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
