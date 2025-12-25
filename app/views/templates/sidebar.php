@@ -73,7 +73,7 @@
                     </li>';
                 }
                 ?>
-                <?php
+                <!-- <?php
                 if (isset($_SESSION['login'])) {
                     echo '<li class="tambah-pengembalian-barang">
                         <button onclick="location.href=\'' . BASEURL . 'pengembalian\'">
@@ -82,11 +82,11 @@
                         </button>
                     </li>';
                 }
-                ?>
+                ?> -->
                 <?php
                 if (isset($_SESSION['login']) && in_array($_SESSION['id_role'], ['1', '2', '3', '4'])) {
                     echo '<li class="tambah-merek-barang">
-                        <button onclick="location.href=\'' . BASEURL . 'merekBarang\'">
+                        <button onclick="location.href=\'' . BASEURL . 'ValidasiPeminjaman\'">
                             <i class="fa-solid fa-barcode"></i>
                             Validasi Peminjaman
                         </button>
